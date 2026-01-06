@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galguard LipoG - Next-generation preservative and antimicrobial solution by Galaxy Surfactants">
+    <title>Galguard LipoG - Galaxy Surfactants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 6%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            letter-spacing: -0.2px;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 5.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+        }
+
+        .hero-image-container {
+            position: absolute;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            height: 70vh;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            display: block;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 6%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: #1a1a1a;
+        }
+
+        .scroll-text {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            font-weight: 500;
+        }
+
+        /* Section Common */
+        section {
+            padding: 8rem 6%;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 700px;
+            font-weight: 400;
+            letter-spacing: -0.2px;
+        }
+
+        /* Problems Section */
+        .problems {
+            background: #fafafa;
+        }
+
+        .problems-header {
+            max-width: 800px;
+            margin-bottom: 5rem;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1400px;
+        }
+
+        .problem-card {
+            padding: 4rem 3rem;
+            background: transparent;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.3s;
+        }
+
+        .problem-card:last-child {
+            border-right: none;
+        }
+
+        .problem-card:hover {
+            background: white;
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .problem-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #1a1a1a;
+            stroke-width: 1.5;
+        }
+
+        .problem-title {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .problem-text {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: white;
+        }
+
+        .solution-container {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .solution-text h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .solution-text p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .benefits-list li {
+            padding-left: 2rem;
+            position: relative;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .benefits-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: #1a1a1a;
+            border-radius: 50%;
+        }
+
+        .solution-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 2px;
+            display: block;
+        }
+
+        /* Features Grid */
+        .features-section {
+            background: #fafafa;
+            padding: 8rem 6%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+
+        .feature-visual {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .feature-visual h4 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-visual p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 8rem 6%;
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-header {
+            margin-bottom: 4rem;
+        }
+
+        .cta-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: -1.5px;
+        }
+
+        .cta-header p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 0;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: white;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            padding: 1.25rem 3rem;
+            background: white;
+            color: #1a1a1a;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            justify-self: start;
+        }
+
+        .submit-btn:hover {
+            background: #f0f0f0;
+            transform: translateX(10px);
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: rgba(255,255,255,0.5);
+            padding: 3rem 6%;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-image-container {
+                width: 45%;
+                height: 60vh;
+            }
+
+            .solution-container {
+                gap: 5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .problem-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .problem-card:last-child {
+                border-bottom: none;
+            }
+
+            .solution-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-visual {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .feature-image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .hero-image-container {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 100%;
+                height: 50vh;
+                margin-top: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 5%;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .hero {
+                padding: 0 5%;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .scroll-indicator {
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Galaxy Surfactants</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-label">Preservative Innovation</div>
+            <h1 class="hero-title">Galguard LipoG</h1>
+            <p class="hero-subtitle">Next-generation antimicrobial and antidandruff solution for modern formulations</p>
+        </div>
+        
+        <div class="hero-image-container">
+            <!-- REPLACE THIS: Add your hero image here -->
+            <img src="./images/hero.jpg" alt="Beautiful Hair Care" class="hero-image">
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems" id="challenges">
+        <div class="problems-header">
+            <div class="section-label">Industry Challenges</div>
+            <h2 class="section-title">Current Market Limitations</h2>
+            <p class="section-description">The personal care industry faces critical challenges in developing effective, safe, and sustainable preservation solutions.</p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="problem-title">Microbial Contamination</h3>
+                <p class="problem-text">Traditional preservatives fail to provide comprehensive broad-spectrum protection, compromising product safety and shelf life.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="problem-title">Harsh Chemical Ingredients</h3>
+                <p class="problem-text">Conventional antimicrobials often cause irritation and sensitivity, failing to meet clean beauty standards.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="problem-title">Persistent Scalp Issues</h3>
+                <p class="problem-text">Dandruff treatments often compromise hair health, lacking the balance between efficacy and gentleness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="solution">
+        <div class="section-label">Our Solution</div>
+        <h2 class="section-title">Galguard LipoG Technology</h2>
+        <p class="section-description">A revolutionary multifunctional ingredient that redefines preservation and scalp care standards.</p>
+
+        <div class="solution-container">
+            <div class="solution-text">
+                <h3>Advanced Multifunctional Platform</h3>
+                <p>Galguard LipoG represents a breakthrough in cosmetic preservation. This innovative ingredient delivers superior antimicrobial efficacy while maintaining exceptional skin and scalp compatibility, perfectly aligned with modern clean beauty principles.</p>
+
+                <ul class="benefits-list">
+                    <li>Broad-spectrum antimicrobial protection against bacteria, yeast, and fungi</li>
+                    <li>Clinically proven antidandruff and anti-inflammatory properties</li>
+                    <li>Naturally-derived formulation meeting clean beauty standards</li>
+                    <li>Universal compatibility across diverse product formats</li>
+                    <li>pH-stable performance from 3.0 to 8.0</li>
+                    <li>Cost-effective with low use concentrations</li>
+                </ul>
+            </div>
+
+            <div>
+                <!-- REPLACE THIS: Add your solution image here -->
+                <img src="./images/solution.jpg" alt="Healthy Hair and Scalp" class="solution-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-label">Key Benefits</div>
+        <h2 class="section-title">Why Choose Galguard LipoG</h2>
+
+        <div class="features-grid">
+            <div class="feature-visual">
+                <!-- REPLACE THIS: Add feature image 1 -->
+                <img src="./images/feature-1.jpg" alt="Beautiful Skin" class="feature-image">
+                <div>
+                    <h4>Superior Protection</h4>
+                    <p>Comprehensive defense extending shelf life and ensuring consumer safety throughout product usage.</p>
+                </div>
+            </div>
+
+            <div class="feature-visual">
+                <!-- REPLACE THIS: Add feature image 2 -->
+                <img src="./images/feature-2.jpg" alt="Clean Beauty" class="feature-image">
+                <div>
+                    <h4>Clean & Gentle</h4>
+                    <p>Naturally-derived with exceptional mildness for skin and scalp applications.</p>
+                </div>
+            </div>
+
+            <div class="feature-visual">
+                <!-- REPLACE THIS: Add feature image 3 -->
+                <img src="./images/feature-3.jpg" alt="Healthy Scalp" class="feature-image">
+                <div>
+                    <h4>Triple Action</h4>
+                    <p>Combines preservation, antimicrobial activity, and antidandruff benefits in one ingredient.</p>
+                </div>
+            </div>
+
+            <div class="feature-visual">
+                <!-- REPLACE THIS: Add feature image 4 -->
+                <img src="./images/feature-4.jpg" alt="Science Backed" class="feature-image">
+                <div>
+                    <h4>Science-Backed</h4>
+                    <p>Supported by extensive research demonstrating efficacy and safety across applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <div class="cta-header">
+                <h2>Transform Your Formulations</h2>
+                <p>Connect with our technical team to discover how Galguard LipoG can elevate your products.</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your formulation needs..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+
+                <div class="success-message" id="successMsg">
+                    Thank you for your interest. Our team will contact you within 24 hours.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Galaxy Surfactants. All rights reserved.</p>
+        <p>Leading innovation in specialty chemicals for personal care industries.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('#challenges').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Form submitted:', formData);
+            
+            document.getElementById('successMsg').style.display = 'block';
+            this.reset();
+            
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 5000);
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .feature-visual').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
